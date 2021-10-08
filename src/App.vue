@@ -288,6 +288,7 @@
             title: 'Range Date Picker',
             description: 'Date Range selector - With custom element to trigger the component (only input or button)',
             editOption: false,
+            
             initial: {
               start: '2018-04-05',
               end: '2018-04-20'
@@ -301,8 +302,9 @@
                 type: 'button'
               },
               range: true,
+              
               formatted: 'll',
-              format: 'YYYY-MM-DD',
+              format: 'DD-MM-YYYY',
               color: 'purple',
               label: 'Select date range',
               id: 'RangeDatePicker'
@@ -471,9 +473,12 @@
           { key: 'thisMonth', label: 'This month', value: 'month' },
           { key: 'lastMonth', label: 'Last month', value: '-month' },
           { key: 'thisYear', label: 'This year', value: 'year' },
-          { key: 'lastYear', label: 'Last year', value: '-year' }
+          { key: 'lastYear', label: 'Last year', value: '-year' },
         ]
       }
+    },
+    mounted()  {
+      this.$moment()
     }
   }
 </script>

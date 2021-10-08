@@ -1,4 +1,6 @@
 import { getDefaultLocale } from './utils'
+import moment from "moment";
+console.log( moment().add(1, 'days').format('DD-MM-YYYY'))
 
 export default {
   value: { type: [String, Object], default: null },
@@ -42,14 +44,12 @@ export default {
   customShortcuts: {
     type: Array,
     default: () => ([
-      { key: 'thisWeek', label: 'This week', value: 'isoWeek' },
-      { key: 'lastWeek', label: 'Last week', value: '-isoWeek' },
-      { key: 'last7Days', label: 'Last 7 days', value: 7 },
-      { key: 'last30Days', label: 'Last 30 days', value: 30 },
+      { key: 'today', label: 'Today', value: 0 },
+      { key: 'yesterday', label: 'Yesterday', value: -1 },
+      { key: 'tomorrow', label: 'Tomorrow', value: 1 },
+      { key: 'last7Days', label: 'Last 7 Days', value: 7 },
       { key: 'thisMonth', label: 'This month', value: 'month' },
-      { key: 'lastMonth', label: 'Last month', value: '-month' },
-      { key: 'thisYear', label: 'This year', value: 'year' },
-      { key: 'lastYear', label: 'Last year', value: '-year' }
+      
     ])
   },
   noValueToCustomElem: { type: Boolean, default: false },

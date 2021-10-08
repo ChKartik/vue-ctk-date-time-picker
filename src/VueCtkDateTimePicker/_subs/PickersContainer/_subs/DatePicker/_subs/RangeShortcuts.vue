@@ -100,7 +100,13 @@
         /**
          * Case where the value is a specific number of days.
          */
-        if (typeof value === 'number') {
+        if (typeof value === 'number' && value != 7) {
+          return {
+            start: moment().add(value, 'd'),
+            value
+          }
+        }
+        else if (typeof value === 'number' && value == 7) {
           return {
             start: moment().subtract(value, 'd'),
             end: moment(),

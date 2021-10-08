@@ -17,7 +17,20 @@ describe('VueCtkDateTimePicker/PickersContainer/DatePicker/RangeShortcuts', () =
           { key: 'thisMonth', label: 'This month', value: 'month' },
           { key: 'lastMonth', label: 'Last month', value: '-month' },
           { key: 'thisYear', label: 'This year', value: 'year' },
-          { key: 'lastYear', label: 'Last year', value: '-year' }
+          { key: 'lastYear', label: 'Last year', value: '-year' },
+          {
+            key: 'tomorrow',
+            label: 'Tomorrow',
+            value: () => {
+              return {
+                start: this.$moment().add(1, 'days'),
+                end: null
+              }
+            },
+            callback: ({ start, end }) => {
+              console.log('My shortcut was clicked with values: ', start, end)
+            }
+          },
         ],
         height: 200
       }

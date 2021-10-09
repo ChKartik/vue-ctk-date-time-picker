@@ -103,6 +103,7 @@
         if (typeof value === 'number' && value != 7) {
           return {
             start: moment().add(value, 'd'),
+            end: moment().add(value, 'd'),
             value
           }
         }
